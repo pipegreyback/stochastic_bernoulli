@@ -16,29 +16,11 @@ Nodo::Nodo(int estado_anterior, int estado_actual, int recompensa_acumulada, flo
   iteraciones = iteraciones;
   if (eslavon< iteraciones){
     if(estado == 0){
-      if(estado_anterior == 0){
-        // recompensa_acumulada += matriz_recompensa[1];
-        // probabilidad_acumulada = probabilidad_acumulada * matriz_probabilidades[1];
-        Nodo *nodo_derecho = new Nodo(estado, 1, recompensa_acumulada + matriz_recompensa[1], probabilidad_acumulada * matriz_probabilidades[1], eslavon, iteraciones);
-        Nodo *nodo_izquierdo = new Nodo(estado, 0, recompensa_acumulada + matriz_recompensa[0], probabilidad_acumulada * matriz_probabilidades[0], eslavon, iteraciones);
-      } else if(estado_anterior == 1){
-        // recompensa_acumulada += matriz_recompensa[3];
-        // probabilidad_acumulada = probabilidad_acumulada * matriz_probabilidades[3];
-        Nodo *nodo_derecho = new Nodo(estado, 1, recompensa_acumulada + matriz_recompensa[1], probabilidad_acumulada * matriz_probabilidades[1], eslavon, iteraciones);
-        Nodo *nodo_izquierdo = new Nodo(estado, 0, recompensa_acumulada + matriz_recompensa[0], probabilidad_acumulada * matriz_probabilidades[0], eslavon, iteraciones);
-      }
+      Nodo *nodo_derecho = new Nodo(estado, 1, recompensa_acumulada + matriz_recompensa[1], probabilidad_acumulada * matriz_probabilidades[1], eslavon, iteraciones);
+      Nodo *nodo_izquierdo = new Nodo(estado, 0, recompensa_acumulada + matriz_recompensa[0], probabilidad_acumulada * matriz_probabilidades[0], eslavon, iteraciones);
     }else if(estado == 1){
-      if(estado_anterior == 0){
-        // recompensa_acumulada += matriz_recompensa[2];
-        // probabilidad_acumulada = probabilidad_acumulada * matriz_probabilidades[2];
-        Nodo *nodo_derecho = new Nodo(estado, 1, recompensa_acumulada + matriz_recompensa[3], probabilidad_acumulada * matriz_probabilidades[3], eslavon, iteraciones);
-        Nodo *nodo_izquierdo = new Nodo(estado, 0, recompensa_acumulada + matriz_recompensa[2], probabilidad_acumulada * matriz_probabilidades[2], eslavon, iteraciones);
-      } else if(estado_anterior == 1){
-        // recompensa_acumulada += matriz_recompensa[4];
-        // probabilidad_acumulada = probabilidad_acumulada * matriz_probabilidades[4];
-        Nodo *nodo_derecho = new Nodo(estado, 1, recompensa_acumulada + matriz_recompensa[3], probabilidad_acumulada * matriz_probabilidades[3], eslavon, iteraciones);
-        Nodo *nodo_izquierdo = new Nodo(estado, 0, recompensa_acumulada + matriz_recompensa[2], probabilidad_acumulada * matriz_probabilidades[2], eslavon, iteraciones);
-      }
+      Nodo *nodo_derecho = new Nodo(estado, 1, recompensa_acumulada + matriz_recompensa[3], probabilidad_acumulada * matriz_probabilidades[3], eslavon, iteraciones);
+      Nodo *nodo_izquierdo = new Nodo(estado, 0, recompensa_acumulada + matriz_recompensa[2], probabilidad_acumulada * matriz_probabilidades[2], eslavon, iteraciones);
     }
     cout << "Nivel numero  " << eslavon<< '\t';
     cout << "Probabilidad acumulada " << probabilidad_acumulada << '\t';
